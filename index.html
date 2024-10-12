@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>
+                МИНЁР
+            </h1>
+        </div>
+        <div id="money">
+            <div id="balance">
+                <p>Баланс</p>
+                <p id="value"></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="section1">
+            <span>Введите значение:</span>
+            <div>   
+                    <div>
+                        <button class="botao2" onclick="max()">Макс. ставка</button>
+                        <button class="botao2" onclick="mid()">1 / 2</button>
+                    </div>
+                    <input type="number" id="inp" min="1" required>
+            </div>
+            <button class="buttons" id="btBet" onclick="make_bet()"">Поставить</button>
+            <button class="buttons" id="btStop" onclick="take()">Забрать</button>
+        </section>
+        <section id="sect">
+            <span>Выигрыш</span>
+            <div id="profit" class="boxes">
+                <p>0</p>
+            </div>
+            <span>Попаданий</span>
+            <div id="hits" class="boxes">
+                <p>0</p>
+            </div>
+        </section>
+
+        
+    
+        <div id="tabuleiro">
+            <h2 id="alert">Выберите ставку, чтобы играть</h2>
+            <div class="tbrow">
+                <button class="botaoJogo" id="btJg1" onclick="mudarBotao(1)" disabled><img id="btJgImage1" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg2" onclick="mudarBotao(2)" disabled><img id="btJgImage2" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg3" onclick="mudarBotao(3)" disabled><img id="btJgImage3" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg4" onclick="mudarBotao(4)" disabled><img id="btJgImage4" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg5" onclick="mudarBotao(5)" disabled><img id="btJgImage5" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+            </div>
+            <div class="tbrow">
+                <button class="botaoJogo" id="btJg6" onclick="mudarBotao(6)" disabled><img id="btJgImage6" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg7" onclick="mudarBotao(7)" disabled><img id="btJgImage7" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg8" onclick="mudarBotao(8)" disabled><img id="btJgImage8" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg9" onclick="mudarBotao(9)" disabled><img id="btJgImage9" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg10" onclick="mudarBotao(10)" disabled><img id="btJgImage10" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+            </div>
+            <div class="tbrow">
+                <button class="botaoJogo" id="btJg11" onclick="mudarBotao(11)" disabled><img id="btJgImage11" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg12" onclick="mudarBotao(12)" disabled><img id="btJgImage12" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg13" onclick="mudarBotao(13)" disabled><img id="btJgImage13" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg14" onclick="mudarBotao(14)" disabled><img id="btJgImage14" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg15" onclick="mudarBotao(15)" disabled><img id="btJgImage15" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+            </div>
+            <div class="tbrow">
+                <button class="botaoJogo" id="btJg16" onclick="mudarBotao(16)" disabled><img id="btJgImage16" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg17" onclick="mudarBotao(17)" disabled><img id="btJgImage17" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg18" onclick="mudarBotao(18)" disabled><img id="btJgImage18" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg19" onclick="mudarBotao(19)" disabled><img id="btJgImage19" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg20" onclick="mudarBotao(20)" disabled><img id="btJgImage20" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+            </div>
+            <div class="tbrow">
+                <button class="botaoJogo" id="btJg21" onclick="mudarBotao(21)" disabled><img id="btJgImage21" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg22" onclick="mudarBotao(22)" disabled><img id="btJgImage22" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg23" onclick="mudarBotao(23)" disabled><img id="btJgImage23" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg24" onclick="mudarBotao(24)" disabled><img id="btJgImage24" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+                <button class="botaoJogo" id="btJg25" onclick="mudarBotao(25)" disabled><img id="btJgImage25" src="question.png" alt="Button Image" width="50px" height="50px"></button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
